@@ -1,0 +1,6 @@
+{
+  "name": "HA Alarm Center Card",
+  "content_in_root": true,
+  "filename": "ha-alarm-center-card.js",
+  "render_readme": true
+}

@@ -1,4 +1,4 @@
-const VERSION = "0.2.0";
+const VERSION = "0.2.1";
 
 class HAAlarmCenterCard extends HTMLElement {
   constructor() {
@@ -109,13 +109,15 @@ class HAAlarmCenterCard extends HTMLElement {
     return result.sort((a, b) => b.priority - a.priority);
   }
   _snoozeEntries() {
-    const raw = this._s(this._config.snooze_entity) || "";
+    const state = this._s(this._config.snooze_entity);
+    const raw = ["unknown", "unavailable"].includes(state) ? "" : state || "";
     const now = Date.now();
     const entries = new Map();
     for (const token of raw.split(",").map((s) => s.trim()).filter(Boolean)) {
       const at = token.lastIndexOf("@");
       if (at < 1) { entries.set(token, new Date(now + 12 * 60 * 60 * 1000).getTime()); continue; }
       const entity = token.slice(0, at);
+      if (["unknown", "unavailable"].includes(entity)) continue;
       const until = Number(token.slice(at + 1));
       if (entity && Number.isFinite(until) && until > now) entries.set(entity, until);
     }

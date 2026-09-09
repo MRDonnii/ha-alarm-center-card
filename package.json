@@ -1,6 +1,6 @@
 {
   "name": "ha-alarm-center-card",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Alarm and error center with timed snooze for Home Assistant",
   "license": "MIT"
 }

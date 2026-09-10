@@ -1,4 +1,4 @@
-const VERSION = "0.2.2";
+const VERSION = "0.3.0";
 
 class HAAlarmCenterCard extends HTMLElement {
   constructor() {
@@ -234,9 +234,9 @@ class HAAlarmCenterCard extends HTMLElement {
       .section-title:first-of-type{margin-top:0}
       .empty{padding:22px 10px;text-align:center;color:var(--secondary-text-color);font-size:13px}
       .rows{display:flex;flex-direction:column;gap:8px}
-      .row{display:flex;align-items:center;gap:8px;border:1px solid var(--edge);border-radius:14px;padding:6px;border-left:3px solid var(--edge)}
-      .row.priority-1{border-left-color:var(--warn)}
-      .row.priority-2,.row.priority-3{border-left-color:var(--danger)}
+      .row{--tone:var(--edge);display:flex;align-items:center;gap:8px;border:1px solid color-mix(in srgb,var(--tone) 22%,var(--edge));border-radius:14px;padding:6px;border-left:3px solid var(--tone);background:linear-gradient(145deg,color-mix(in srgb,var(--tone) 6%,transparent),transparent 55%);box-shadow:0 4px 12px rgba(0,0,0,.08)}
+      .row.priority-1{--tone:var(--warn)}
+      .row.priority-2,.row.priority-3{--tone:var(--danger)}
       .row.snoozed{opacity:.6}
       .row-main{flex:1;min-width:0;display:flex;align-items:center;gap:10px;padding:6px;border:0;background:transparent;color:inherit;text-align:left;cursor:pointer;border-radius:10px}
       .row-main:hover{background:color-mix(in srgb,var(--primary-text-color) 5%,transparent)}
@@ -246,7 +246,7 @@ class HAAlarmCenterCard extends HTMLElement {
       .row-text strong{font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
       .row-text .sub{font-size:11px;color:var(--secondary-text-color);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
       .row-text .entity-id{margin-top:2px;font-size:9px;color:var(--secondary-text-color);opacity:.6;font-family:monospace}
-      .snooze-btn{flex:0 0 auto;display:flex;align-items:center;gap:5px;padding:8px 10px;border:1px solid var(--edge);border-radius:11px;background:transparent;color:var(--secondary-text-color);font-size:10px;font-weight:700;cursor:pointer}
+      .snooze-btn{flex:0 0 auto;display:flex;align-items:center;gap:5px;padding:8px 10px;border:1px solid color-mix(in srgb,var(--tone) 26%,var(--edge));border-radius:11px;background:transparent;color:var(--secondary-text-color);font-size:10px;font-weight:700;cursor:pointer}
       .snooze-btn ha-icon{--mdc-icon-size:16px}
       .snooze-btn:hover{border-color:var(--primary-text-color);color:var(--primary-text-color)}
       .snooze-btn.active{border-color:var(--accent,#62b5ff);color:var(--accent,#62b5ff)}

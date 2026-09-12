@@ -1,5 +1,12 @@
 # HA Alarm Center Card
 
+## Neutral mobile preview
+
+![Neutral mobile preview of ha-alarm-center-card](docs/preview.png)
+
+> Rendered at 390 px mobile width with fictional Home Assistant entities and values. No private dashboard, person, address, camera, or sensor data is included.
+
+
 Et samlet alarm- og fejlcenter til Home Assistant. Kortet viser aktive alarmer fra konfigurerbare regler og kan midlertidigt skjule en alarm i 12 timer, til næste dag eller i syv dage.
 
 ## Funktioner
